@@ -1,6 +1,5 @@
 import heapq
 
-# === Graph (dengan Subang sebagai penghubung Bekasi dan Cirebon) ===
 graph = {
     "Cilegon": [("Tangerang", 81)],
     "Tangerang": [("Cilegon", 81), ("Jakarta", 29)],
@@ -39,7 +38,6 @@ graph = {
     "Pacitan": [("Yogyakarta", 107), ("Trenggalek", 106)]
 }
 
-# === Heuristic (h) ke Banyuwangi ===
 h = {
     "Cilegon": 950, "Tangerang": 882, "Jakarta": 861, "Bekasi": 840,
     "Depok": 858, "Bogor": 852, "Sukabumi": 832, "Bandung": 780,
@@ -53,7 +51,6 @@ h = {
     "Situbondo": 70, "Jember": 71, "Banyuwangi": 0
 }
 
-# === Algoritma A* ===
 def astar(graph, h, start, goal):
     frontier = [(h[start], 0, start, [start])]  # (f, g, node, path)
     best_cost = {start: 0}
@@ -76,7 +73,6 @@ def astar(graph, h, start, goal):
 
     return None, float('inf')
 
-# === Main Program ===
 if _name_ == "_main_":
     start = "Cilegon"
     goal = "Banyuwangi"

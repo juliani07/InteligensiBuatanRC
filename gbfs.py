@@ -1,6 +1,5 @@
 import heapq
 
-# Graph: tetangga dan jarak
 graph = {
     'Cilegon': {'Tangerang': 90},
     'Tangerang': {'Jakarta': 20},
@@ -21,7 +20,6 @@ graph = {
     'Situbondo': {'Banyuwangi': 90}
 }
 
-# Heuristic (perkiraan jarak ke Banyuwangi)
 heuristic = {
     'Cilegon': 950, 'Tangerang': 882, 'Jakarta': 861, 'Bekasi': 840,
     'Subang': 750, 'Bandung': 780, 'Tasikmalaya': 684, 'Cilacap': 640,
@@ -30,7 +28,6 @@ heuristic = {
     'Situbondo': 120, 'Banyuwangi': 0
 }
 
-# GBFS function
 def gbfs(start, goal):
     frontier = [(heuristic[start], start, [start], 0)]  # (h(n), node, path, cost)
     visited = set()
@@ -49,7 +46,6 @@ def gbfs(start, goal):
 
     return None, None
 
-# Eksekusi
 start, goal = 'Cilegon', 'Banyuwangi'
 path, cost = gbfs(start, goal)
 
